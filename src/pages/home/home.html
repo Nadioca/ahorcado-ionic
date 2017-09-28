@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-8>
+          <img src="../../assets/images/hangman_{{numFallos}}.gif" />
+      </ion-col>
+      <ion-col col-4>
+          <ion-badge *ngFor="let errores of letrasErroneas">{{errores}}</ion-badge>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button *ngFor="let letra of letras" ion-button (click)="letraClick($event, letra)">{{letra}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
